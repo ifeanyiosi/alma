@@ -11,7 +11,6 @@ import {
 import { Cart } from "@/lib/interfaces";
 import { redis } from "@/lib/redis";
 
-
 export async function Navbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
@@ -24,9 +23,7 @@ export async function Navbar() {
     <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
       <div className="flex items-center">
         <Link href="/">
-          <h1 className="text-black font-bold text-xl lg:text-3xl">
-            Alma
-          </h1>
+          <h1 className="text-black font-bold text-xl lg:text-3xl">Alma</h1>
         </Link>
         <NavbarLinks />
       </div>
@@ -50,13 +47,9 @@ export async function Navbar() {
             />
           </>
         ) : (
-          <div className="hidden md:flex md:flex-1 md:items-center md:justify-end md:space-x-2">
+          <div className=" md:items-center md:justify-end md:space-x-2">
             <Button variant="ghost" asChild>
               <LoginLink>Sign in</LoginLink>
-            </Button>
-            <span className="h-6 w-px bg-gray-200"></span>
-            <Button variant="ghost" asChild>
-              <RegisterLink>Create Account</RegisterLink>
             </Button>
           </div>
         )}
