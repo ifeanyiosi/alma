@@ -1,4 +1,3 @@
-
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { NextResponse } from "next/server";
 import { unstable_noStore as noStore } from "next/cache";
@@ -35,6 +34,6 @@ export async function GET() {
   return NextResponse.redirect(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/"
-      : "https://shoe-marshal.vercel.app/"
+      : "https://alma-tau.vercel.app/"
   );
 }
