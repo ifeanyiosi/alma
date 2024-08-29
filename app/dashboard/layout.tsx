@@ -8,12 +8,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { CircleUser, MenuIcon } from "lucide-react";
 import React, { ReactNode } from "react";
 import { unstable_noStore as noStore } from "next/cache";
-import { getKindeServerSession, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
+import {
+  getKindeServerSession,
+  LogoutLink,
+} from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default async function DashboardLayout({
   children,
@@ -25,7 +34,7 @@ export default async function DashboardLayout({
   const user = await getUser();
   console.log(user);
 
-  if (!user || user.email !== "ifeanyi.osi.okeke@gmail.com") {
+  if (!user) {
     return redirect("/");
   }
 
@@ -48,7 +57,18 @@ export default async function DashboardLayout({
           </SheetTrigger>
           <SheetContent side="left">
             <nav className="flex flex-col gap-6 text-lg font-medium mt-5">
-              <DashboardNavigation />
+              <SheetClose asChild>
+                <a href="/dashboard">Dashboard</a>
+              </SheetClose>
+              <SheetClose asChild>
+                <a href="/dashboard/orders">Orders</a>
+              </SheetClose>
+              <SheetClose asChild>
+                <a href="/dashboard/products">Products</a>
+              </SheetClose>
+              <SheetClose asChild>
+                <a href="/dashboard/banner">Banner Picture</a>
+              </SheetClose>
             </nav>
           </SheetContent>
         </Sheet>

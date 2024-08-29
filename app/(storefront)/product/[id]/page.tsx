@@ -48,7 +48,7 @@ export default async function ProductIdRoute({
               {data.name}
             </h1>
             <p className="text-3xl mt-2 text-gray-900">
-              ${data.price.toLocaleString()}
+              ₦{data.price.toLocaleString()}
             </p>
             <div className="mt-3 flex items-center gap-1">
               <StarIcon className="h-4 w-4 text-yellow-500 fill-yellow-500" />
