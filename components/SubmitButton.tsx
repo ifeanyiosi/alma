@@ -19,6 +19,7 @@ interface buttonProps {
 
 export function SubmitButton({ text, variant }: buttonProps) {
   const { pending } = useFormStatus();
+
   return (
     <>
       {pending ? (

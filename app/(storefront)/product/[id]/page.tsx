@@ -1,3 +1,5 @@
+
+
 import { StarIcon } from "lucide-react";
 import { notFound } from "next/navigation";
 import { unstable_noStore as noStore } from "next/cache";
@@ -6,7 +8,6 @@ import { ImageSlider } from "@/components/storefront/ImageSlider";
 import { ShoppingBagButton } from "@/components/SubmitButton";
 import { FeaturedProducts } from "@/components/storefront/FeaturedProducts";
 import { addItem } from "@/actions";
-import Head from "next/head";
 
 async function getData(productId: string) {
   const data = await prisma.product.findUnique({
@@ -39,10 +40,6 @@ export default async function ProductIdRoute({
   const addProducttoShoppingCart = addItem.bind(null, data.id);
   return (
     <>
-      <Head>
-        <title>{data.name} | Alma eCommerce Store</title>
-        <meta name="description" content={data.description} />
-      </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start lg:gap-x-24 py-6">
           <ImageSlider images={data.images} />
