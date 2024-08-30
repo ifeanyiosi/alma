@@ -29,15 +29,14 @@ export async function Navbar() {
       </div>
 
       <div className="flex items-center">
+        <Link href="/bag" className="group p-2 flex items-center mr-2">
+          <ShoppingBagIcon className="h-6 w-6 text-gray-400 group-hover:text-gray-500" />
+          <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+            {total}
+          </span>
+        </Link>
         {user ? (
           <>
-            <Link href="/bag" className="group p-2 flex items-center mr-2">
-              <ShoppingBagIcon className="h-6 w-6 text-gray-400 group-hover:text-gray-500" />
-              <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                {total}
-              </span>
-            </Link>
-
             <UserDropdown
               email={user.email as string}
               name={user.given_name as string}

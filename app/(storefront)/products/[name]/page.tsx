@@ -1,8 +1,8 @@
-
 import { notFound } from "next/navigation";
 import { unstable_noStore as noStore } from "next/cache";
 import prisma from "@/lib/db";
 import { ProductCard } from "@/components/storefront/ProductCard";
+import Head from "next/head";
 
 async function getData(productCategory: string) {
   switch (productCategory) {
@@ -100,6 +100,13 @@ export default async function CategoriesPage({
   const { data, title } = await getData(params.name);
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Head>
+        <title>Alma eCommerce Store</title>
+        <meta
+          name="description"
+          content="Browse our wide range of products, including the latest trends in fashion and more."
+        />
+      </Head>
       <h1 className="font-semibold text-3xl my-5">{title}</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data.map((item) => (

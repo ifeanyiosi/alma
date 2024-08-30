@@ -134,7 +134,7 @@ export async function deleteBanner(formData: FormData) {
   const user = await getUser();
 
   if (!user) {
-    return redirect("/");
+    return redirect("/api/auth/login");
   }
 
   await prisma.banner.delete({
@@ -151,7 +151,7 @@ export async function addItem(productId: string) {
   const user = await getUser();
 
   if (!user) {
-    return redirect("/");
+    return redirect("/api/auth/login");
   }
 
   let cart: Cart | null = await redis.get(`cart-${user.id}`);

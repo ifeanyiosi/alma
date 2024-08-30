@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Assesment for Stackbuld
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## 🚀 About Me
+I'm Ifeanyi Osi-Okeke, a skilled front-end developer with 4 years of experience specializing in building dynamic and responsive web applications using Next.js, TypeScript, and Tailwind CSS. I have a passion for creating intuitive user interfaces and optimizing web performance. With a strong background in both development and customer service, I bring a unique blend of technical expertise and user-centered design to every project I undertake.
+
+
+## Installation
+
+Install my-project with npm run dev
 ```
+    
+## Optimizations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Lazy Loading: Used Next.js’s built-in <Image /> component for automatic lazy loading of images. This improves page load times by loading images only when they enter the viewport.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+SEO Enhancements:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Sitemap: Generated a sitemap to help search engines crawl and index the site more effectively.
+<Head /> Component: Utilized Next.js’s <Head /> component to manage and optimize meta tags, titles, and descriptions for better search engine visibility.
+Robots Meta Tags: Implemented robots meta tags to guide search engine crawlers on which pages to index and which to avoid.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project, you will need to add the following environment variables to your .env file
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+KINDE_CLIENT_SECRET
+KINDE_ISSUER_URL
+KINDE_SITE_URL
+KINDE_POST_LOGOUT_REDIRECT_URL
+KINDE_POST_LOGIN_REDIRECT_URL
 
-## Deploy on Vercel
+UPLOADTHING_SECRET
+UPLOADTHING_APP_ID
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+DATABASE_URL
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+REDIS_URL
+REDIS_TOKEN
+
+STRIPE_API_KEY
+STRIPE_SECRET_WEBHOOK
+
+# Tech Stack
+
+Client:
+
+Next.js (Framework for React)
+TailwindCSS (Styling framework)
+Kinde Auth (Authentication client-side integration)
+
+
+Server:
+
+Neon DB (Database)
+Prisma (ORM for database interaction)
+Redis (Caching and data store)
+Kinde Auth (Authentication server-side integration)
+
+
+## Features
+
+User Features:
+
+Login with Kinde: Sign in to access features.
+Browse Products: View a list of available products.
+Select Product: Click on a product to view details.
+Add to Cart: Add selected products to the shopping cart.
+View Cart: Review items in the cart.
+Checkout: Proceed to checkout and enter shipping information.
+Pay with Stripe: Complete payment using Stripe integration.
+
+
+Admin Features:
+
+Login with Kinde: Sign in to access admin features.
+Add Products: Add new products to the inventory.
+Remove Products: Remove products from the inventory.
+Edit Products: Update product details such as price, description, and images.
+
+
+## usage
+
+Login with Kinde: Users must log in to add items to the cart and proceed with shopping.
+Persistent Cart Data: Cart data is saved using Redis, ensuring that items remain in the cart even after a hard refresh or when accessing from another device.
+
